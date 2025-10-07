@@ -102,7 +102,7 @@ class CopernicusDownloader:
             else:
                 dict_files = []
                 for idx in range(len(request)):
-                    file_path = os.path.join(temp_path, '_{idx}_.nc')
+                    file_path = os.path.join(temp_path, f'_{idx}_.nc')
                     self.client.retrieve(dataset, request[idx]).download(file_path)
                     dict_files.append(xr.open_dataset(file_path))
 
